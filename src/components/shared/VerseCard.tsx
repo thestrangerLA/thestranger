@@ -10,11 +10,11 @@ export default function VerseCard({ number, arabic, lao }: VerseCardProps) {
   return (
     <Card className="shadow-sm mb-4">
       <CardContent className="p-4">
-        <div className="flex justify-between items-center mb-2">
-          <p className="text-base font-bold text-primary">{number}</p>
-          <p className="font-arabic text-xl text-right leading-relaxed text-foreground">{arabic}</p>
+        <div className="flex justify-between items-start mb-2 text-right">
+          <span className="text-sm font-bold text-primary mr-2 leading-loose">{`(${number})`}</span>
+          <p className="font-arabic text-2xl leading-relaxed text-foreground">{arabic}</p>
         </div>
-        <p className="text-xl font-bold text-card-foreground mt-4 leading-relaxed">{lao}</p>
+        <p className="text-lg font-bold text-card-foreground mt-4 leading-relaxed">{lao}</p>
       </CardContent>
     </Card>
   );
