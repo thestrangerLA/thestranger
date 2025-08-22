@@ -10,7 +10,7 @@ export const homeCardData = [
 ];
 
 interface FundamentalCard {
-    id: "islam-what-is-it" | "allah-who-is-he" | "prophet-who-is-he" | "who-is-a-muslim";
+    id: "islam-what-is-it" | "belief-in-allah" | "prophet-who-is-he" | "who-is-a-muslim";
     title: string;
     subtitle: string;
     icon: React.ReactElement;
@@ -18,7 +18,7 @@ interface FundamentalCard {
 
 export const fundamentalsCardData: FundamentalCard[] = [
     { id: "islam-what-is-it", title: "ອິສລາມແມ່ນຫຍັງ?", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(HandHeart) },
-    { id: "allah-who-is-he", title: "ອັລລໍຮ໌ແມ່ນໃຜ?", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(Sparkles) },
+    { id: "belief-in-allah", title: "ອັລລໍຮ໌ແມ່ນໃຜ?", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(Sparkles) },
     { id: "prophet-who-is-he", title: "ນະບີແມ່ນໃຜ?", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(TrendingUp) },
     { id: "who-is-a-muslim", title: "ໃຜແມ່ນມຸດສະລິມ?", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(Users) },
 ];

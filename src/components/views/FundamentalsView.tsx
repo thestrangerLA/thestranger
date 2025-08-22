@@ -11,8 +11,8 @@ interface FundamentalsViewProps {
 
 export default function FundamentalsView({ navigateTo, goBack }: FundamentalsViewProps) {
   const handleClick = (id: string) => {
-    if (id === 'islam-what-is-it') {
-      navigateTo('islam-what-is-it');
+    if (id === 'islam-what-is-it' || id === 'belief-in-allah') {
+      navigateTo(id as View);
     }
     // Handle other card clicks if they lead to new views
   };
