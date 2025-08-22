@@ -10,7 +10,7 @@ interface HomeViewProps {
 
 export default function HomeView({ navigateTo }: HomeViewProps) {
   const handleCardClick = (id: string) => {
-    if (id === 'fundamentals' || id === 'faith' || id === 'practice' || id === 'ai-guide') {
+    if (id === 'fundamentals' || id === 'faith' || id === 'practice' || id === 'articles') {
       navigateTo(id as View);
     }
   };

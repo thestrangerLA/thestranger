@@ -5,6 +5,7 @@ export const homeCardData = [
     { title: "ພື້ນຖານ", emoji: "📖", id: "fundamentals" },
     { title: "ຫຼັກຄວາມເຊື່ອ", emoji: "✨", id: "faith" },
     { title: "ຫຼັກປະຕິບັດ", emoji: "🤲", id: "practice" },
+    { title: "ບົດຄວາມ", emoji: "📝", id: "articles" },
     
 ];
 
