@@ -3,7 +3,6 @@
 import HomeCard from '@/components/shared/HomeCard';
 import { homeCardData } from '@/data/islamic-data';
 import type { View } from '@/app/page';
-import { Menu } from 'lucide-react';
 
 interface HomeViewProps {
   navigateTo: (view: View) => void;
@@ -18,11 +17,9 @@ export default function HomeView({ navigateTo }: HomeViewProps) {
 
   return (
     <div className="flex flex-col">
-      <header className="bg-primary text-primary-foreground p-6 rounded-b-2xl shadow-md">
-        <div className="flex justify-between items-center mb-5">
-          <Menu className="w-6 h-6" />
-        </div>
+      <header className="bg-primary text-primary-foreground p-6 rounded-b-2xl shadow-md text-center">
         <h1 className="text-2xl font-semibold">ແອັບຂໍ້ມູນກ່ຽວກັບອິສລາມ</h1>
+        <p className="text-sm mt-2 opacity-90">"ແທ້ຈິງ ການລະນຶກເຖິງອັລລໍຮ໌ເຮັດໃຫ້ຫົວໃຈສະຫງົບ." (ກຸຣອານ 13:28)</p>
       </header>
       <main className="p-4 grid grid-cols-2 gap-4">
         {homeCardData.map((card) => (
