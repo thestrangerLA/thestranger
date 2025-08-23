@@ -10,6 +10,7 @@ import HadithView from '@/components/views/HadithView';
 import WhatIsIslamView from '@/components/views/WhatIsIslamView';
 import WhoIsAMuslimView from '@/components/views/WhoIsAMuslimView';
 import BeliefInAllahView from '@/components/views/BeliefInAllahView';
+import BeliefInAngelsView from '@/components/views/BeliefInAngelsView';
 import ProphetView from '@/components/views/ProphetView';
 import SurahAlFatihahView from '@/components/views/SurahAlFatihahView';
 import SurahAlBaqarahView from '@/components/views/SurahAlBaqarahView';
@@ -26,6 +27,7 @@ export type View =
   | 'articles'
   | 'islam-what-is-it'
   | 'belief-in-allah'
+  | 'belief-in-angels'
   | 'prophet-who-is-he'
   | 'who-is-a-muslim'
   | 'al-fatihah'
@@ -68,6 +70,8 @@ export default function App() {
         return <WhoIsAMuslimView goBack={goBack} />;
       case 'belief-in-allah':
         return <BeliefInAllahView goBack={goBack} />;
+      case 'belief-in-angels':
+        return <BeliefInAngelsView goBack={goBack} />;
       case 'prophet-who-is-he':
         return <ProphetView goBack={goBack} />;
       case 'al-fatihah':
@@ -80,7 +84,7 @@ export default function App() {
   };
   
   const activeTab = useMemo(() => {
-    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim'].includes(currentView)) {
+    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels'].includes(currentView)) {
       return 'home';
     }
     if (['al-fatihah', 'al-baqarah'].includes(currentView)) {
