@@ -27,6 +27,8 @@ import SalatView from '@/components/views/SalatView';
 import ZakatView from '@/components/views/ZakatView';
 import SawmView from '@/components/views/SawmView';
 import HajjView from '@/components/views/HajjView';
+import FortyHadithView from '@/components/views/FortyHadithView';
+import HadithDetailView from '@/components/views/HadithDetailView';
 
 export type View =
   | 'home'
@@ -52,13 +54,27 @@ export type View =
   | 'salat'
   | 'zakat'
   | 'sawm'
-  | 'hajj';
+  | 'hajj'
+  | 'forty-hadith'
+  | 'hadith-detail';
+
+export type HadithDetail = {
+  id: string;
+  title: string;
+  arabic: string;
+  lao: string;
+  explanation: string[];
+};
 
 export default function App() {
   const [history, setHistory] = useState<View[]>(['home']);
+  const [selectedHadith, setSelectedHadith] = useState<HadithDetail | null>(null);
   const currentView = history[history.length - 1];
 
-  const navigateTo = (view: View) => {
+  const navigateTo = (view: View, hadith?: HadithDetail) => {
+    if (hadith) {
+      setSelectedHadith(hadith);
+    }
     setHistory(prev => [...prev, view]);
   };
 
@@ -81,7 +97,7 @@ export default function App() {
       case 'quran':
         return <QuranView navigateTo={navigateTo} goBack={goBack} />;
       case 'hadith':
-        return <HadithView goBack={goBack} />;
+        return <HadithView goBack={goBack} navigateTo={navigateTo} />;
       case 'articles':
         return <ArticlesView navigateTo={navigateTo} goBack={goBack} />;
       case 'halal-food':
@@ -118,6 +134,10 @@ export default function App() {
         return <SawmView goBack={goBack} />;
       case 'hajj':
         return <HajjView goBack={goBack} />;
+      case 'forty-hadith':
+        return <FortyHadithView goBack={goBack} navigateTo={navigateTo} />;
+      case 'hadith-detail':
+        return <HadithDetailView goBack={goBack} hadith={selectedHadith} />;
       default:
         return <HomeView navigateTo={navigateTo} />;
     }
@@ -129,6 +149,9 @@ export default function App() {
     }
     if (['al-fatihah', 'al-baqarah'].includes(currentView)) {
       return 'quran';
+    }
+    if (['forty-hadith', 'hadith-detail'].includes(currentView)) {
+      return 'hadith';
     }
     return currentView;
   }, [currentView]);
