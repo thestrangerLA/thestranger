@@ -37,7 +37,7 @@ export const practiceCardData = [
     { title: "2. ການລະໝາດ", emoji: "🤲", id: "salat" },
     { title: "3. ການຈ່າຍຊະກາດ", emoji: "💰", id: "zakat" },
     { title: "4. ການຖືອົດ", emoji: "🌙", id: "sawm" },
-    { title: "5. ການສະແຫວງບຸນຮັຈ", emoji: "🕋" },
+    { title: "5. ການສະແຫວງບຸນຮັຈ", emoji: "🕋", id: "hajj" },
 ];
 
 export const quranCardData = [
