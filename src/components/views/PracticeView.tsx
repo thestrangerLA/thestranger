@@ -2,12 +2,20 @@
 import PracticeCard from '@/components/shared/PracticeCard';
 import ViewHeader from '@/components/shared/ViewHeader';
 import { practiceCardData } from '@/data/islamic-data';
+import type { View } from '@/app/page';
 
 interface PracticeViewProps {
   goBack: () => void;
+  navigateTo: (view: View) => void;
 }
 
-export default function PracticeView({ goBack }: PracticeViewProps) {
+export default function PracticeView({ goBack, navigateTo }: PracticeViewProps) {
+  const handleClick = (id?: string) => {
+    if (id === 'shahada') {
+      navigateTo(id);
+    }
+  };
+
   return (
     <div className="flex flex-col">
       <ViewHeader title="ຫຼັກປະຕິບັດ" onBack={goBack} />
@@ -17,6 +25,7 @@ export default function PracticeView({ goBack }: PracticeViewProps) {
             key={index}
             emoji={card.emoji}
             title={card.title}
+            onClick={() => handleClick(card.id)}
           />
         ))}
       </main>

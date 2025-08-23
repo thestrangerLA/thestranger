@@ -20,6 +20,7 @@ import { Toaster } from '@/components/ui/toaster';
 import BeliefInProphetsView from '@/components/views/BeliefInProphetsView';
 import BeliefInLastDayView from '@/components/views/BeliefInLastDayView';
 import BeliefInDestinyView from '@/components/views/BeliefInDestinyView';
+import ShahadaView from '@/components/views/ShahadaView';
 
 export type View =
   | 'home'
@@ -39,7 +40,8 @@ export type View =
   | 'prophet-who-is-he'
   | 'who-is-a-muslim'
   | 'al-fatihah'
-  | 'al-baqarah';
+  | 'al-baqarah'
+  | 'shahada';
 
 export default function App() {
   const [history, setHistory] = useState<View[]>(['home']);
@@ -64,7 +66,7 @@ export default function App() {
       case 'faith':
         return <FaithView navigateTo={navigateTo} goBack={goBack} />;
       case 'practice':
-        return <PracticeView goBack={goBack} />;
+        return <PracticeView navigateTo={navigateTo} goBack={goBack} />;
       case 'quran':
         return <QuranView navigateTo={navigateTo} goBack={goBack} />;
       case 'hadith':
@@ -94,13 +96,15 @@ export default function App() {
         return <SurahAlFatihahView goBack={goBack} />;
       case 'al-baqarah':
         return <SurahAlBaqarahView goBack={goBack} />;
+      case 'shahada':
+        return <ShahadaView goBack={goBack} />;
       default:
         return <HomeView navigateTo={navigateTo} />;
     }
   };
   
   const activeTab = useMemo(() => {
-    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books', 'belief-in-prophets', 'belief-in-last-day', 'belief-in-destiny'].includes(currentView)) {
+    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books', 'belief-in-prophets', 'belief-in-last-day', 'belief-in-destiny', 'shahada'].includes(currentView)) {
       return 'home';
     }
     if (['al-fatihah', 'al-baqarah'].includes(currentView)) {
