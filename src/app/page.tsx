@@ -7,6 +7,8 @@ import FaithView from '@/components/views/FaithView';
 import PracticeView from '@/components/views/PracticeView';
 import QuranView from '@/components/views/QuranView';
 import HadithView from '@/components/views/HadithView';
+import ArticlesView from '@/components/views/ArticlesView';
+import HalalFoodView from '@/components/views/HalalFoodView';
 import WhatIsIslamView from '@/components/views/WhatIsIslamView';
 import WhoIsAMuslimView from '@/components/views/WhoIsAMuslimView';
 import BeliefInAllahView from '@/components/views/BeliefInAllahView';
@@ -34,6 +36,7 @@ export type View =
   | 'faith'
   | 'practice'
   | 'articles'
+  | 'halal-food'
   | 'islam-what-is-it'
   | 'belief-in-allah'
   | 'belief-in-angels'
@@ -80,8 +83,9 @@ export default function App() {
       case 'hadith':
         return <HadithView goBack={goBack} />;
       case 'articles':
-        // Placeholder for ArticlesView
-        return <HomeView navigateTo={navigateTo} />;
+        return <ArticlesView navigateTo={navigateTo} goBack={goBack} />;
+      case 'halal-food':
+        return <HalalFoodView goBack={goBack} />;
       case 'islam-what-is-it':
         return <WhatIsIslamView goBack={goBack} />;
       case 'who-is-a-muslim':
@@ -120,7 +124,7 @@ export default function App() {
   };
   
   const activeTab = useMemo(() => {
-    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books', 'belief-in-prophets', 'belief-in-last-day', 'belief-in-destiny', 'shahada', 'salat', 'zakat', 'sawm', 'hajj'].includes(currentView)) {
+    if (['fundamentals', 'faith', 'practice', 'articles', 'halal-food', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books', 'belief-in-prophets', 'belief-in-last-day', 'belief-in-destiny', 'shahada', 'salat', 'zakat', 'sawm', 'hajj'].includes(currentView)) {
       return 'home';
     }
     if (['al-fatihah', 'al-baqarah'].includes(currentView)) {

@@ -1,4 +1,4 @@
-import { Bot, BookOpen, HandHeart, HeartHandshake, History, ListChecks, LucideIcon, ScrollText, Sparkles, TrendingUp, Users } from 'lucide-react';
+import { Bot, BookOpen, HandHeart, HeartHandshake, History, ListChecks, LucideIcon, ScrollText, Sparkles, TrendingUp, Users, Utensils } from 'lucide-react';
 import React from 'react';
 
 export const homeCardData = [
@@ -54,4 +54,15 @@ export const hadithCardData = [
     { title: "40 Hadith Qudsi" },
     { title: "Hadith of Jibril" },
     { title: "Hadith on Intentions" },
+];
+
+interface ArticleCard {
+    id: "halal-food";
+    title: string;
+    subtitle: string;
+    icon: React.ReactElement;
+}
+
+export const articlesCardData: ArticleCard[] = [
+    { id: "halal-food", title: "ອາຫານຮາລານ (Halal): ຫຼັກການແລະຄວາມໝາຍ", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(Utensils) },
 ];
