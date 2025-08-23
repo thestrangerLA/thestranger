@@ -23,6 +23,7 @@ import BeliefInDestinyView from '@/components/views/BeliefInDestinyView';
 import ShahadaView from '@/components/views/ShahadaView';
 import SalatView from '@/components/views/SalatView';
 import ZakatView from '@/components/views/ZakatView';
+import SawmView from '@/components/views/SawmView';
 
 export type View =
   | 'home'
@@ -45,7 +46,8 @@ export type View =
   | 'al-baqarah'
   | 'shahada'
   | 'salat'
-  | 'zakat';
+  | 'zakat'
+  | 'sawm';
 
 export default function App() {
   const [history, setHistory] = useState<View[]>(['home']);
@@ -106,13 +108,15 @@ export default function App() {
         return <SalatView goBack={goBack} />;
       case 'zakat':
         return <ZakatView goBack={goBack} />;
+      case 'sawm':
+        return <SawmView goBack={goBack} />;
       default:
         return <HomeView navigateTo={navigateTo} />;
     }
   };
   
   const activeTab = useMemo(() => {
-    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books', 'belief-in-prophets', 'belief-in-last-day', 'belief-in-destiny', 'shahada', 'salat', 'zakat'].includes(currentView)) {
+    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books', 'belief-in-prophets', 'belief-in-last-day', 'belief-in-destiny', 'shahada', 'salat', 'zakat', 'sawm'].includes(currentView)) {
       return 'home';
     }
     if (['al-fatihah', 'al-baqarah'].includes(currentView)) {
