@@ -1,4 +1,4 @@
-import { Bot, BookOpen, HandHeart, HeartHandshake, History, ListChecks, LucideIcon, ScrollText, Sparkles, TrendingUp, Users, Utensils, Hourglass } from 'lucide-react';
+import { Bot, BookOpen, HandHeart, HeartHandshake, HelpCircle, History, ListChecks, LucideIcon, ScrollText, Sparkles, TrendingUp, Users, Utensils, Hourglass } from 'lucide-react';
 import React from 'react';
 
 export const homeCardData = [
@@ -57,7 +57,7 @@ export const hadithCardData = [
 ];
 
 interface ArticleCard {
-    id: "halal-food" | "afterlife";
+    id: "halal-food" | "afterlife" | "god-exists";
     title: string;
     subtitle: string;
     icon: React.ReactElement;
@@ -66,6 +66,7 @@ interface ArticleCard {
 export const articlesCardData: ArticleCard[] = [
     { id: "halal-food", title: "ອາຫານຮາລານ (Halal): ຫຼັກການແລະຄວາມໝາຍ", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(Utensils) },
     { id: "afterlife", title: "ຊີວິດຫຼັງຄວາມຕາຍໃນອິດສະລາມ", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(Hourglass) },
+    { id: "god-exists", title: "ພະເຈົ້າມີຈິງບໍ?: ທັດສະນະຂອງອິດສະລາມ", subtitle: "ອ່ານເພີມຕື່ມ", icon: React.createElement(HelpCircle) },
 ];
 
 export const fortyHadithData = [

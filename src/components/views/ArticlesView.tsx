@@ -11,7 +11,7 @@ interface ArticlesViewProps {
 
 export default function ArticlesView({ navigateTo, goBack }: ArticlesViewProps) {
   const handleClick = (id: string) => {
-    if (id === 'halal-food' || id === 'afterlife') {
+    if (id === 'halal-food' || id === 'afterlife' || id === 'god-exists') {
       navigateTo(id as View);
     }
   };
