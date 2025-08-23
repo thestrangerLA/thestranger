@@ -17,6 +17,7 @@ import SurahAlFatihahView from '@/components/views/SurahAlFatihahView';
 import SurahAlBaqarahView from '@/components/views/SurahAlBaqarahView';
 import BottomNav from '@/components/shared/BottomNav';
 import { Toaster } from '@/components/ui/toaster';
+import BeliefInProphetsView from '@/components/views/BeliefInProphetsView';
 
 export type View =
   | 'home'
@@ -30,6 +31,7 @@ export type View =
   | 'belief-in-allah'
   | 'belief-in-angels'
   | 'belief-in-books'
+  | 'belief-in-prophets'
   | 'prophet-who-is-he'
   | 'who-is-a-muslim'
   | 'al-fatihah'
@@ -76,6 +78,8 @@ export default function App() {
         return <BeliefInAngelsView goBack={goBack} />;
       case 'belief-in-books':
         return <BeliefInBooksView goBack={goBack} />;
+      case 'belief-in-prophets':
+        return <BeliefInProphetsView goBack={goBack} />;
       case 'prophet-who-is-he':
         return <ProphetView goBack={goBack} />;
       case 'al-fatihah':
@@ -88,7 +92,7 @@ export default function App() {
   };
   
   const activeTab = useMemo(() => {
-    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books'].includes(currentView)) {
+    if (['fundamentals', 'faith', 'practice', 'articles', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books', 'belief-in-prophets'].includes(currentView)) {
       return 'home';
     }
     if (['al-fatihah', 'al-baqarah'].includes(currentView)) {

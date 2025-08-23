@@ -11,7 +11,7 @@ interface FaithViewProps {
 
 export default function FaithView({ navigateTo, goBack }: FaithViewProps) {
   const handleClick = (id: string) => {
-    if (id === 'belief-in-allah' || id === 'belief-in-angels' || id === 'belief-in-books') {
+    if (id === 'belief-in-allah' || id === 'belief-in-angels' || id === 'belief-in-books' || id === 'belief-in-prophets') {
       navigateTo(id as View);
     }
     // Handle other clicks if necessary
