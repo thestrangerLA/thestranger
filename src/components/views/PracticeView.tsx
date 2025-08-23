@@ -11,8 +11,8 @@ interface PracticeViewProps {
 
 export default function PracticeView({ goBack, navigateTo }: PracticeViewProps) {
   const handleClick = (id?: string) => {
-    if (id === 'shahada') {
-      navigateTo(id);
+    if (id === 'shahada' || id === 'salat') {
+      navigateTo(id as View);
     }
   };
 
