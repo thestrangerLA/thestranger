@@ -1,7 +1,9 @@
 'use client';
+import React, { useState } from 'react';
 import ViewHeader from '@/components/shared/ViewHeader';
 import VerseCard from '@/components/shared/VerseCard';
 import SummaryCard from '@/components/shared/SummaryCard';
+import { Input } from '@/components/ui/input';
 
 interface SurahFussilatViewProps {
   goBack: () => void;
@@ -21,11 +23,33 @@ const verses = [
 ];
 
 export default function SurahFussilatView({ goBack }: SurahFussilatViewProps) {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredVerses = verses.filter(verse =>
+    verse.number.includes(searchQuery) ||
+    verse.lao.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    verse.english.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    verse.arabic.includes(searchQuery)
+  );
+
   return (
     <div className="flex flex-col">
       <ViewHeader title="ສູຣໍ ຟຸສຊີລັດ" onBack={goBack} />
-      <main className="p-4">
-        {verses.map(v => <VerseCard key={v.number} {...v} />)}
+       <div className="p-4 sticky top-0 bg-background z-10">
+        <Input
+          type="text"
+          placeholder="ຄົ້ນຫາອາຍັດ..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full"
+        />
+      </div>
+      <main className="p-4 pt-0">
+        {filteredVerses.length > 0 ? (
+          filteredVerses.map(v => <VerseCard key={v.number} {...v} />)
+        ) : (
+          <p className="text-center text-muted-foreground">ບໍ່ພົບອາຍັດທີ່ທ່ານຄົ້ນຫາ.</p>
+        )}
         <SummaryCard title="ສະຫຼຸບ">
           ສິບອາຍັດທຳອິດຂອງສູຣໍ ຟຸສຊີລັດ ໄດ້ກ່າວເຖິງການປະທານລົງມາຂອງຄຳພີກຸຣອານ, ການຜິນຫຼັງຂອງຜູ້ປະຕິເສດ, ແລະການຢືນຢັນເຖິງຄວາມເປັນເອກະພາບຂອງອັນລໍຫ໌ ແລະການສ້າງຊັ້ນຟ້າແລະແຜ່ນດິນຂອງພຣະອົງ.
         </SummaryCard>
