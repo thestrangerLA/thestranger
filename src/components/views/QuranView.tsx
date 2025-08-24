@@ -11,7 +11,7 @@ interface QuranViewProps {
 
 export default function QuranView({ navigateTo, goBack }: QuranViewProps) {
   const handleClick = (id?: string) => {
-    if (id === 'al-fatihah' || id === 'al-baqarah') {
+    if (id === 'al-fatihah' || id === 'al-baqarah' || id === 'fussilat') {
       navigateTo(id);
     }
   };

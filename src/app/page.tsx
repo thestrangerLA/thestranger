@@ -31,6 +31,7 @@ import FortyHadithView from '@/components/views/FortyHadithView';
 import HadithDetailView from '@/components/views/HadithDetailView';
 import AfterlifeView from '@/components/views/AfterlifeView';
 import GodExistsView from '@/components/views/GodExistsView';
+import SurahFussilatView from '@/components/views/SurahFussilatView';
 
 export type View =
   | 'home'
@@ -54,6 +55,7 @@ export type View =
   | 'who-is-a-muslim'
   | 'al-fatihah'
   | 'al-baqarah'
+  | 'fussilat'
   | 'shahada'
   | 'salat'
   | 'zakat'
@@ -132,6 +134,8 @@ export default function App() {
         return <SurahAlFatihahView goBack={goBack} />;
       case 'al-baqarah':
         return <SurahAlBaqarahView goBack={goBack} />;
+      case 'fussilat':
+        return <SurahFussilatView goBack={goBack} />;
       case 'shahada':
         return <ShahadaView goBack={goBack} />;
       case 'salat':
@@ -155,7 +159,7 @@ export default function App() {
     if (['fundamentals', 'faith', 'practice', 'articles', 'halal-food', 'afterlife', 'god-exists', 'islam-what-is-it', 'belief-in-allah', 'prophet-who-is-he', 'who-is-a-muslim', 'belief-in-angels', 'belief-in-books', 'belief-in-prophets', 'belief-in-last-day', 'belief-in-destiny', 'shahada', 'salat', 'zakat', 'sawm', 'hajj'].includes(currentView)) {
       return 'home';
     }
-    if (['al-fatihah', 'al-baqarah'].includes(currentView)) {
+    if (['al-fatihah', 'al-baqarah', 'fussilat'].includes(currentView)) {
       return 'quran';
     }
     if (['forty-hadith', 'hadith-detail'].includes(currentView)) {
