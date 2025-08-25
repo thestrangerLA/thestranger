@@ -3,7 +3,7 @@ import ViewHeader from '@/components/shared/ViewHeader';
 import ContentSection from '@/components/shared/ContentSection';
 import QuoteCard from '@/components/shared/QuoteCard';
 import SummaryCard from '@/components/shared/SummaryCard';
-import { Crosshair, EyeOff, Infinity, Bookmark, Sparkles, CheckCircle } from 'lucide-react';
+import { Crosshair, EyeOff, Infinity, Bookmark, Sparkles, CheckCircle, BookHeart, Heart, Layers } from 'lucide-react';
 
 interface BeliefInAllahViewProps {
   goBack: () => void;
@@ -15,6 +15,19 @@ const BulletPoint = ({ children }: { children: React.ReactNode }) => (
         <span>{children}</span>
     </li>
 );
+
+const NumberedPoint = ({ number, title, children }: { number: string, title: React.ReactNode, children: React.ReactNode }) => (
+    <div className="mt-2">
+        <h4 className="font-bold text-md text-primary flex items-start gap-2">
+            <span className="bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center text-xs shrink-0">{number}</span>
+            {title}
+        </h4>
+        <div className="pl-7 mt-1 text-card-foreground">
+            {children}
+        </div>
+    </div>
+);
+
 
 export default function BeliefInAllahView({ goBack }: BeliefInAllahViewProps) {
   return (
@@ -34,13 +47,32 @@ export default function BeliefInAllahView({ goBack }: BeliefInAllahViewProps) {
              <QuoteCard source="ອັນກຸຣອານ 112:1-4"><strong>ຈົ່ງກ່າວເຖີດ: ພຣະອົງຄືອັນລໍຫ໌ ຜູ້ຊົງເອກະ. ອັນລໍຫ໌ນັ້ນຊົງເປັນທີ່ເພິ່ງ. ພຣະອົງບໍ່ຊົງໃຫ້ກຳເນີດ ແລະ ບໍ່ຊົງຖືກໃຫ້ກຳເນີດ. ແລະບໍ່ມີຜູ້ໃດສະເໝີເໝືອນພຣະອົງ.</strong></QuoteCard>
         </ContentSection>
 
-        <ContentSection title="ຄຸນລັກສະນະທີ່ສົມບູນແບບຂອງອັນລໍຫ໌" icon={<Sparkles />}>
-            <p>ພະອົງມີຄຸນລັກສະນະທີ່ສົມບູນແບບທັງໝົດທີ່ເອີ້ນວ່າ "ພະນາມອັນງົດງາມ" (Asma ul-Husna) 99 ພະນາມ. ນອກຈາກທີ່ທ່ານໄດ້ກ່າວມາແລ້ວ, ຍັງມີຄຸນລັກສະນະທີ່ສຳຄັນອື່ນໆອີກ:</p>
+        <ContentSection title="ຄວາມໝາຍຂອງການເຊື່ອຕໍ່ອັລລໍຫ໌" icon={<BookHeart />}>
+            <p>ການສັດທາຕໍ່ອັລລໍຫ໌ແມ່ນພື້ນຖານທີ່ສຳຄັນທີ່ສຸດຂອງສາສະໜາອິດສະລາມ, ເຊິ່ງເອີ້ນວ່າ ເຕົ່າຮິດ (ເອກະພາບຂອງພະເຈົ້າ). ໝາຍເຖິງການເຊື່ອໝັ້ນຢ່າງໜັກແໜ້ນວ່າ “ບໍ່ມີພະເຈົ້າອື່ນໃດນອກຈາກອັລລໍຫ໌”. ການສັດທານີ້ແມ່ນຫົວໃຈຂອງຫຼັກສັດທາທັງໝົດ ເພາະເປັນທີ່ມາຂອງຄວາມເຊື່ອໃນຫຼັກການອື່ນໆຂອງສາສະໜາອິດສະລາມ ເຊັ່ນ: ສັດທາໃນຄຳພີ, ສາດສະດາ, ເທວະທູດ ແລະ ວັນສິ້ນໂລກ. ນອກຈາກນີ້, ຍັງຊ່ວຍໃຫ້ຫົວໃຈຂອງຜູ້ສັດທາມີຄວາມໝັ້ນຄົງ ແລະ ເຂັ້ມແຂງໃນການປະເຊີນກັບອຸປະສັກຕ່າງໆ.</p>
+            <h3 className="font-bold text-md text-primary mt-4">ຄວາມໝາຍຂອງເຕົ່າຮິດ</h3>
+            <p>ນັກວິຊາການໄດ້ແບ່ງເຕົ່າຮິດອອກເປັນ 3 ດ້ານຫຼັກ ເພື່ອໃຫ້ເຂົ້າໃຈໄດ້ຢ່າງເລິກເຊິ່ງ:</p>
+            <NumberedPoint number="1" title="ເຕົ່າຮິດ ອັລຣູບູບີຢະຮ໌ (ເອກະພາບໃນຄວາມເປັນພະຜູ້ສ້າງ):">ຄືການເຊື່ອໝັ້ນວ່າອັລລໍຫ໌ເປັນຜູ້ສ້າງ, ຜູ້ໃຫ້ຊີວິດ ແລະ ຄວາມຕາຍ, ແລະ ຜູ້ທີ່ດູແລຄວບຄຸມທຸກສິ່ງໃນຈັກກະວານ.</NumberedPoint>
+            <NumberedPoint number="2" title="ເຕົ່າຮິດ ອັລອຸລູຮີຢະຮ໌ (ເອກະພາບໃນການເຄົາລົບພັກດີ):">ຄືການມອບການເຄົາລົບພັກດີ (ອິບາດະຮ໌) ທັງໝົດແດ່ອັລລໍອ໌ພຽງອົງດຽວເທົ່ານັ້ນ, ບໍ່ກົ້ມກາບໄຫວ້ ຫຼື ຂໍຄວາມຊ່ວຍເຫຼືອຈາກສິ່ງສັກສິດອື່ນໃດ.</NumberedPoint>
+            <NumberedPoint number="3" title="ເຕົ່າຮິດ ອັລອັສມາອ໌ ວັດສຊິຟາຕ (ເອກະພາບໃນພະນາມ ແລະ ຄຸນລັກສະນະ):">ຄືການຍອມຮັບພະນາມ ແລະ ຄຸນລັກສະນະຂອງອັລລໍອ໌ຕາມທີ່ລະບຸໄວ້ໃນຄຳພີອັລກຸຣອານ ແລະ ແບບຢ່າງຂອງສາດສະດາມູຮຳມັດ, ໂດຍບໍ່ບິດເບືອນ, ບໍ່ປະຕິເສດ ແລະ ບໍ່ນຳໄປປຽບທຽບກັບສິ່ງໃດໆ.</NumberedPoint>
+        </ContentSection>
+
+        <ContentSection title="ຄຸນລັກສະນະຂອງອັລລໍອ໌ (ເຊາະຟາຕຸລລໍອ໌)" icon={<Sparkles />}>
+            <p>ອັລລໍອ໌ຊົງມີຄຸນລັກສະນະທີ່ສົມບູນ ແລະ ຜິດແປກຈາກສັບພະສິ່ງທັງປວງ. ຄຸນລັກສະນະທີ່ສຳຄັນຂອງພະອົງໄດ້ແກ່:</p>
             <ul className="space-y-2 mt-2">
-                <BulletPoint><strong>ອັນ-ຄໍວີ (Al-Qawiyy):</strong> ຜູ້ຊົງມີພະລັງອັນຍິ່ງໃຫຍ່, ພະອົງມີພະລັງອຳນາດເໜືອທຸກສິ່ງຢ່າງ.</BulletPoint>
-                <BulletPoint><strong>ອັນ-ຮາກີມ (Al-Hakim):</strong> ຜູ້ຊົງມີປັນຍາອັນເລິກເຊິ່ງ, ທຸກສິ່ງທີ່ພະອົງເຮັດລ້ວນແລ້ວແຕ່ມີເຫດຜົນ ແລະ ປັນຍາທີ່ສົມບູນແບບ.</BulletPoint>
-                <BulletPoint><strong>ອັນ-ຄາບີດ (Al-Khabir):</strong> ຜູ້ຊົງຮູ້ເຖິງຄວາມເລັ້ນລັບ, ພະອົງຮູ້ທຸກສິ່ງທີ່ຖືກເຊື່ອງຊ້ອນ, ແມ້ແຕ່ຄວາມຄິດໃນໃຈຂອງຄົນ.</BulletPoint>
-                <BulletPoint><strong>ອັນ-ຮັຍ (Al-Hayy):</strong> ຜູ້ຊົງມີຊີວິດຢູ່ຕະຫຼອດໄປ, ບໍ່ມີວັນຕາຍ.</BulletPoint>
+                <BulletPoint><strong>ຊົງມີຢູ່ຈິງ ແລະ ເປັນນິລັນດອນ:</strong> ຊົງມີຢູ່ກ່ອນສິ່ງທັງປວງ ແລະ ບໍ່ມີຈຸດສິ້ນສຸດ.</BulletPoint>
+                <BulletPoint><strong>ຊົງເປັນຜູ້ສ້າງ ແລະ ຜູ້ດຳລົງຢູ່ເອງ:</strong> ທຸກສິ່ງຂຶ້ນຢູ່ກັບພະອົງ ແລະ ພະອົງບໍ່ໄດ້ຂຶ້ນຢູ່ກັບສິ່ງໃດ.</BulletPoint>
+                <BulletPoint><strong>ຊົງໄດ້ຍິນ ແລະ ຊົງເຫັນທຸກສິ່ງ:</strong> ຊົງຮອບຮູ້ໃນທຸກສິ່ງທີ່ເກີດຂຶ້ນ.</BulletPoint>
+                <BulletPoint><strong>ຊົງເຕັມໄປດ້ວຍຄວາມເມດຕາ ແລະ ຍຸຕິທຳ:</strong> ພະອົງຈະຊົງບໍ່ເຮັດອະທຳຕໍ່ຜູ້ໃດ.</BulletPoint>
+            </ul>
+        </ContentSection>
+
+        <ContentSection title="ຜົນຂອງການສັດທາຕໍ່ອັລລໍອ໌" icon={<Heart />}>
+            <p>ການສັດທາຕໍ່ອັລລໍອ໌ຢ່າງແທ້ຈິງຈະສົ່ງຜົນກະທົບໃນທາງບວກຕໍ່ຊີວິດຂອງຜູ້ສັດທາ:</p>
+            <ul className="space-y-2 mt-2">
+              <BulletPoint><strong>ມີເປົ້າໝາຍຊີວິດທີ່ຊັດເຈນ:</strong> ຜູ້ສັດທາຈະເຂົ້າໃຈວ່າຊີວິດຢູ່ເພື່ອການເຄົາລົບພັກດີຕໍ່ພະອົງ.</BulletPoint>
+              <BulletPoint><strong>ນຳມາເຊິ່ງຄວາມສະຫງົບສຸກໃນຫົວໃຈ:</strong> ຄວາມໝັ້ນໃຈວ່າອັລລໍອ໌ຊົງຄວບຄຸມທຸກສິ່ງ, ເຮັດໃຫ້ຜູ້ສັດທາຮູ້ສຶກສະຫງົບ ແລະ ບໍ່ຫວັ່ນໄຫວ.</BulletPoint>
+              <BulletPoint><strong>ຫຼີກເວັ້ນຈາກບາບທີ່ໃຫຍ່ທີ່ສຸດ:</strong> ການສັດທາທີ່ໝັ້ນຄົງຈະຊ່ວຍໃຫ້ຫຼີກເວັ້ນ ຊິຣິກ (ການຕັ້ງພາກີກັບພະເຈົ້າ) ເຊິ່ງເປັນບາບທີ່ອັລລໍອ໌ຈະຊົງບໍ່ອະໄພໃຫ້.</BulletPoint>
+              <BulletPoint><strong>ນຳໄປສູ່ການກະທຳທີ່ດີງາມ:</strong> ເຊັ່ນ: ຄວາມສັດຊື່, ຄວາມອົດທົນ ແລະ ການຊ່ວຍເຫຼືອຜູ້ອື່ນ.</BulletPoint>
             </ul>
         </ContentSection>
 
