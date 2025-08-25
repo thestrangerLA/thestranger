@@ -43,8 +43,8 @@ export const practiceCardData = [
 export const quranCardData = [
     { number: "1", title: "Al-Fatihah", verses: "7 Verse", arabicTitle: "الفَاتِحَة", id: "al-fatihah" },
     { number: "2", title: "Al-Baqarah", verses: "286 Verse", arabicTitle: "البَقَرَة", id: "al-baqarah" },
+    { number: "3", title: "Aali Imran", verses: "200 Verse", arabicTitle: "آل عِمْرَان", id: "aal-imran" },
     { number: "41", title: "Fussilat", verses: "54 Verse", arabicTitle: "فُصِّلَتْ", id: "fussilat" },
-    { number: "3", title: "Aali Imran", verses: "200 Verse", arabicTitle: "آل عِمْرَان" },
     { number: "4", title: "An-Nisa", verses: "176 Verse", arabicTitle: "النِّسَاء" },
     { number: "5", title: "Al-Ma'idah", verses: "120 Verse", arabicTitle: "المَائِدَة" },
     { number: "6", title: "Al-An'am", verses: "165 Verse", arabicTitle: "الْأَنْعَام" },
