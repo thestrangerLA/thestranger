@@ -13,11 +13,9 @@ interface FortyHadithViewProps {
 export default function FortyHadithView({ goBack, navigateTo }: FortyHadithViewProps) {
   
   const handleClick = (hadith: Partial<HadithDetail>) => {
-    if (hadith.id === 'hadith-1') {
-      const fullHadith = fortyHadithData.find(h => h.id === hadith.id);
-      if (fullHadith) {
-        navigateTo('hadith-detail', fullHadith as HadithDetail);
-      }
+    const fullHadith = fortyHadithData.find(h => h.id === hadith.id);
+    if (fullHadith) {
+      navigateTo('hadith-detail', fullHadith as HadithDetail);
     }
   };
 
